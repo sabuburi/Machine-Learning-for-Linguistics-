@@ -13,25 +13,18 @@ Core question: for the same Arabic words, do the two recitation styles differ in
 The framing is **descriptive phonetics**. No ranking of styles or reciters, no religious judgments.
 
 ## 2. Professor's suggestions (my notes, verbatim) and how I read them
-Verbatim notes:
-- Vowel Duration
-- Check class three, Euclidean Distance
-- Look at the Praat analysis
-- Run an xG boost
-- Vowel Identity, F_one vs F_one
-- Dependent variable, Teacher vs Student
 
-| Note | My reading | Status |
+| Note | Description | Status |
 |---|---|---|
-| Vowel duration | Measure duration of each vowel (short /a i u/ vs long /aː iː uː/), compare across styles | clear |
-| Check class three, Euclidean Distance | Most likely **k-means clustering** of vowel tokens on standardized F1, F2, and duration (k-means groups points by Euclidean distance). Reference R script: `docs/class3/kmeans_formants.R` (scale first, k = 6 for the six Arabic vowels, nstart = 100, fixed seed). Also useful: Euclidean distance between cluster/vowel centroids per style. | likely, **TO CONFIRM** that this is the class-3 method |
-| Look at the Praat analysis | Use Praat (or its Python wrapper `praat-parselmouth`) for formants, durations, and TextGrids | clear |
-| Run an xG boost | XGBoost classifier, grouped cross-validation, baselines | clear |
-| Vowel Identity, F_one vs F_one | Almost certainly **F1 vs F2** (typo): vowel-space plot per vowel identity | **TO CONFIRM** (typo) |
-| Dependent variable, Teacher vs Student | Correction from me: the dependent variable is **style = Muallim vs Mujawwad**. "Teacher vs Student" in the notes was a slip. | confirmed |
+| Vowel duration | Measure duration of each vowel (short /a i u/ vs long /aː iː uː/), compare across styles | TODO |
+| k-means clustering with euclidean distance |vowel tokens on standardized F1, F2, and duration (k-means groups points by Euclidean distance). Also useful: Euclidean distance between cluster/vowel centroids per style. | TODO |
+| Look at the Praat analysis | Use Praat (or its Python wrapper `praat-parselmouth`) for formants, durations, and TextGrids | TODO |
+| Run an xG boost | XGBoost classifier, grouped cross-validation, baselines | TODO |
+| Vowel Identity, F1 vs F2|  vowel-space plot per vowel identity | TODO |
+| Dependent Variables on Muallim and Mujawwad | the dependent variable is **style = Muallim vs Mujawwad**.| TODO |
 
 Dependent variable (confirmed): a column `style` with values `muallim` / `mujawwad`,
-derived from the top-level folder name. There is no teacher/student label anywhere in this project.
+derived from the top-level folder name.
 
 ## 3. Data
 - Hugging Face dataset `zaibihassan/Quranic-Word-By-Word-Audio-Data` (Apache-2.0).
@@ -49,10 +42,7 @@ derived from the top-level folder name. There is no teacher/student label anywhe
 - There are no vowel boundaries in the data. Vowel segmentation is the main technical problem.
 
 ## 4. Existing code
-`style_classifier.py` works at word level on synthetic test data only. It has NOT been run on
-the real files. It extracts duration, pause, RMS, F0 (semitones), MFCC features, and runs
-surah-grouped CV with majority, duration-only, logistic regression, and random forest models.
-It needs: XGBoost, Praat/parselmouth formant measurements, and vowel-level features.
+`IN-PROGRESS` 
 
 ## 5. Methodological rules
 - Matched design: compare the same word (same SSS_AAA_WWW) across styles.
