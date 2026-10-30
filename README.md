@@ -71,14 +71,3 @@ It needs: XGBoost, Praat/parselmouth formant measurements, and vowel-level featu
 - Recitation is a codified register (tajweed, madd elongation), not natural speech.
 - Word clips remove inter-word pauses; vowel boundaries are estimated, not given.
 
-## 7. Constraints
-- Deadline: **[FILL IN]**
-- Team size and split: **[FILL IN]**
-- Deliverable (report / poster): **[FILL IN]**
-- Course rubric: put it in `docs/rubric.md`
-
-## 8. Open questions (ask me, and I will ask the professor)
-1. What exactly does the class-3 Euclidean-distance method specify?
-2. Is "F_one vs F_one" F1 vs F2?
-3. Is manual vowel annotation in Praat for a subset acceptable, or is automatic alignment expected?
-
