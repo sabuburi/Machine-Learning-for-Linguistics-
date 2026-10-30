@@ -1,7 +1,6 @@
 # PROJECT BRIEF: Muallim vs Mujawwad recitation (ML for Linguistics final report)
 
-Read this whole file before doing anything. Items marked **TO CONFIRM** are not settled.
-Do not guess them: ask me.
+Read this whole file before doing anything. 
 
 ## 1. Goal
 A final report for a *Machine Learning for Linguistics* course.
